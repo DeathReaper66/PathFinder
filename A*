@@ -111,13 +111,13 @@ namespace PathFinder
 
         private void OnDrawGizmos()
         {
+            if (PathToTarget == null) return;
+
             foreach (var item in CheckedNodes)
             {
                 Gizmos.color = Color.yellow;
                 Gizmos.DrawSphere(new Vector2(item.Position.x, item.Position.y), 0.1f);
             }
-
-            if (PathToTarget == null) return;
 
             foreach (var item in PathToTarget)
             {
